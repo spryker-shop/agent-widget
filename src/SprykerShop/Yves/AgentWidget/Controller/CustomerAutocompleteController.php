@@ -23,11 +23,6 @@ class CustomerAutocompleteController extends AbstractController
      */
     protected const VIEW_PATH = '@AgentWidget/views/customer-autocomplete/customer-autocomplete.twig';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function indexAction(Request $request): Response
     {
         $queryParams = $request->query->all();
@@ -54,11 +49,6 @@ class CustomerAutocompleteController extends AbstractController
         return $this->renderView(static::VIEW_PATH, $customers);
     }
 
-    /**
-     * @param \Symfony\Component\Validator\ConstraintViolationList $constraintViolationList
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     protected function errorResponse(ConstraintViolationList $constraintViolationList): Response
     {
         return $this->renderView(static::VIEW_PATH, ['errors' => (string)$constraintViolationList]);

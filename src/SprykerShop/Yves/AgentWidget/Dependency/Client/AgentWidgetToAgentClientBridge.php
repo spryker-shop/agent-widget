@@ -26,27 +26,16 @@ class AgentWidgetToAgentClientBridge implements AgentWidgetToAgentClientInterfac
         $this->agentClient = $agentClient;
     }
 
-    /**
-     * @return bool
-     */
     public function isLoggedIn(): bool
     {
         return $this->agentClient->isLoggedIn();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\UserTransfer
-     */
     public function getAgent(): UserTransfer
     {
         return $this->agentClient->getAgent();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerQueryTransfer $customerQueryTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAutocompleteResponseTransfer
-     */
     public function findCustomersByQuery(CustomerQueryTransfer $customerQueryTransfer): CustomerAutocompleteResponseTransfer
     {
         return $this->agentClient->findCustomersByQuery($customerQueryTransfer);

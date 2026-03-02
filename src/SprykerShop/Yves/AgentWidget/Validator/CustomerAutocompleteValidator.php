@@ -20,19 +20,11 @@ class CustomerAutocompleteValidator implements CustomerAutocompleteValidatorInte
      */
     protected $validator;
 
-    /**
-     * @param \Symfony\Component\Validator\Validator\ValidatorInterface $validator
-     */
     public function __construct(ValidatorInterface $validator)
     {
         $this->validator = $validator;
     }
 
-    /**
-     * @param array $query
-     *
-     * @return \Symfony\Component\Validator\ConstraintViolationListInterface
-     */
     public function validate(array $query): ConstraintViolationListInterface
     {
         $constraint = new Collection(

@@ -13,20 +13,9 @@ use Generated\Shared\Transfer\UserTransfer;
 
 interface AgentWidgetToAgentClientInterface
 {
-    /**
-     * @return bool
-     */
     public function isLoggedIn(): bool;
 
-    /**
-     * @return \Generated\Shared\Transfer\UserTransfer|null
-     */
     public function getAgent(): ?UserTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerQueryTransfer $customerQueryTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAutocompleteResponseTransfer
-     */
     public function findCustomersByQuery(CustomerQueryTransfer $customerQueryTransfer): CustomerAutocompleteResponseTransfer;
 }

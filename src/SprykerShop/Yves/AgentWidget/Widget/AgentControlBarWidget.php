@@ -23,17 +23,11 @@ class AgentControlBarWidget extends AbstractWidget
             ->addParameter('customer', $this->getFactory()->getCustomerClient()->getCustomer());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'AgentControlBarWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@AgentWidget/views/agent-widget/agent-widget.twig';

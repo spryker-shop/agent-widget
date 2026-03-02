@@ -39,11 +39,6 @@ class AgentWidgetDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addAgentClient(Container $container): Container
     {
         $container->set(static::CLIENT_AGENT, function (Container $container): AgentWidgetToAgentClientInterface {
@@ -55,11 +50,6 @@ class AgentWidgetDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCustomerClient(Container $container): Container
     {
         $container->set(static::CLIENT_CUSTOMER, function (Container $container): AgentWidgetToCustomerClientInterface {

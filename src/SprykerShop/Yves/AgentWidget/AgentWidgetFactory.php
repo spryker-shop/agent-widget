@@ -17,25 +17,16 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class AgentWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\AgentWidget\Dependency\Client\AgentWidgetToAgentClientInterface
-     */
     public function getAgentClient(): AgentWidgetToAgentClientInterface
     {
         return $this->getProvidedDependency(AgentWidgetDependencyProvider::CLIENT_AGENT);
     }
 
-    /**
-     * @return \SprykerShop\Yves\AgentWidget\Dependency\Client\AgentWidgetToCustomerClientInterface
-     */
     public function getCustomerClient(): AgentWidgetToCustomerClientInterface
     {
         return $this->getProvidedDependency(AgentWidgetDependencyProvider::CLIENT_CUSTOMER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\AgentWidget\Validator\CustomerAutocompleteValidatorInterface
-     */
     public function createCustomerAutocompleteValidator(): CustomerAutocompleteValidatorInterface
     {
         return new CustomerAutocompleteValidator(
@@ -43,9 +34,6 @@ class AgentWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Validator\ValidatorInterface
-     */
     public function getValidator(): ValidatorInterface
     {
         return Validation::createValidator();
