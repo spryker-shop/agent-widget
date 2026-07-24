@@ -18,6 +18,11 @@ use SprykerShop\Yves\ShopUi\Dependency\Plugin\AgentWidget\AgentWidgetPluginInter
  */
 class AgentWidgetPlugin extends AbstractWidgetPlugin implements AgentWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(): void
     {
         $widget = new AgentControlBarWidget();
