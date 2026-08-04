@@ -1,7 +1,13 @@
+@use 'sass:meta';
+
 @mixin agent-widget-agent-control-bar($name: '.agent-control-bar') {
     #{$name} {
         position: relative;
         z-index: $setting-zi-header + 1;
+
+        @if meta.mixin-exists(agent-widget-agent-control-bar-base-hook) {
+            @include agent-widget-agent-control-bar-base-hook;
+        }
 
         @content;
     }
@@ -14,6 +20,10 @@
     @include agent-widget-agent-control-bar();
 
     #{$name} {
+        @if meta.mixin-exists(agent-control-bar-base-hook) {
+            @include agent-control-bar-base-hook;
+        }
+
         @content;
     }
 }

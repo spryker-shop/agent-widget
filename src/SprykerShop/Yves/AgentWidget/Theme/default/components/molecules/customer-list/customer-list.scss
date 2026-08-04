@@ -1,8 +1,15 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin agent-widget-customer-list($name: '.customer-list') {
     #{$name} {
+        @if meta.mixin-exists(agent-widget-customer-list-base-hook) {
+            @include agent-widget-customer-list-base-hook;
+        }
+
         &__container-item {
             cursor: pointer;
-            padding: map-get($setting-spacing, 'default');
+            padding: map.get($setting-spacing, 'default');
 
             &:hover {
                 background-color: $setting-color-lightest;

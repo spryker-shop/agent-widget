@@ -1,5 +1,11 @@
+@use 'sass:meta';
+
 @mixin agent-widget-agent-navigation($name: '.agent-navigation') {
     #{$name} {
+        @if meta.mixin-exists(agent-widget-agent-navigation-base-hook) {
+            @include agent-widget-agent-navigation-base-hook;
+        }
+
         &__dropdown > &__dropdown-item[position-right] {
             left: auto;
             right: 0;
@@ -28,6 +34,10 @@
     @include agent-widget-agent-navigation();
 
     #{$name} {
+        @if meta.mixin-exists(agent-navigation-base-hook) {
+            @include agent-navigation-base-hook;
+        }
+
         @content;
     }
 }

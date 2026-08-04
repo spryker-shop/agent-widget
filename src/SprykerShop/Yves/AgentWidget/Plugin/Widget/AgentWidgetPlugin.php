@@ -9,15 +9,19 @@ namespace SprykerShop\Yves\AgentWidget\Plugin\Widget;
 
 use Spryker\Yves\Kernel\Widget\AbstractWidgetPlugin;
 use SprykerShop\Yves\AgentWidget\Widget\AgentControlBarWidget;
-use SprykerShop\Yves\ShopUi\Dependency\Plugin\AgentWidget\AgentWidgetPluginInterface;
 
 /**
  * @deprecated Use {@link \SprykerShop\Yves\AgentWidget\Widget\AgentControlBarWidget} instead.
  *
  * @method \SprykerShop\Yves\AgentWidget\AgentWidgetFactory getFactory()
  */
-class AgentWidgetPlugin extends AbstractWidgetPlugin implements AgentWidgetPluginInterface
+class AgentWidgetPlugin extends AbstractWidgetPlugin
 {
+    /**
+     * @var string
+     */
+    public const NAME = 'AgentWidgetPlugin';
+
     /**
      * {@inheritDoc}
      *
