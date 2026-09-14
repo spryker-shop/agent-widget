@@ -35,7 +35,7 @@ class CustomerAutocompleteValidator implements CustomerAutocompleteValidatorInte
     }
 
     /**
-     * @return array<string, array<\Symfony\Component\Validator\Constraint>>
+     * @return array<string, list<\Symfony\Component\Validator\Constraint>>
      */
     protected function getQueryValidations(): array
     {
